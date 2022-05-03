@@ -1,0 +1,23 @@
+{
+  "name": "vanillajs-parcel-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for Vanilla JS Projects",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html"
+  },
+  "keywords": [
+    "boilerplate",
+    "javascript",
+    "html",
+    "css",
+    "scss",
+    "sass"
+  ],
+  "author": "Deepak Joy Jose",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.5.0",
+    "sass": "^1.50.1"
+  }
+}
