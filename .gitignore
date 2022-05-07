@@ -1,14 +1,13 @@
 #  Node Modules
 /node_modules
 
-# css folder contents
-/src/css/*
-
 # .env
 .env
 .env-local
 .env-template
 
+# firebase config file
+ 
 
 # Parcel Development Files
 /.parcel-cache
