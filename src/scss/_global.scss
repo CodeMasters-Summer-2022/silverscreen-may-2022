@@ -8,7 +8,8 @@
 // $bg-black: #191a1f;
 // $dark-gray: #232323;
 // $gray: #9696a3;
-// $light-gray: #c4c4c4;
+// $light-gray: #696972;
+// $lighter-gray: #c4c4c4;
 // $brown: #af795f;
 // $teal: #14b8a6;
 // $teal-dark: #0d433d;
@@ -18,4 +19,155 @@
 body {
   background-color: $bg-black;
   color: $white;
+  font-family: "Poppins", sans-serif;
 }
+
+main {
+  margin-top: 86px;
+}
+
+.top-bar {
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid $teal;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: $bg-black;
+  width: 100%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  .brand-logo {
+    margin-right: 0.75rem;
+  }
+
+  .brand-name {
+    font-size: 1.5rem;
+  }
+}
+
+.side-nav {
+  font-size: 1.125rem;
+  padding: 1rem 0;
+  color: $gray;
+  position: absolute;
+  top: 86px;
+  left: 0;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.5s ease-in;
+  background-color: $bg-black;
+
+  &.side-nav__open {
+    width: 100%;
+    overflow: auto;
+    z-index: 100;
+  }
+
+  h2 {
+    padding-left: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    margin-bottom: 2rem;
+
+    li {
+      padding: 1rem;
+      white-space: nowrap;
+
+      a {
+        color: $gray;
+        transition: all 0.2s ease-in;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: $white;
+
+        .side-nav__icons {
+          transform: scale(1.2);
+
+          path {
+            fill: $teal;
+          }
+        }
+
+        a {
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .side-nav__icons {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.875rem;
+    transition: all 0.2s ease-in;
+
+    path {
+      fill: $light-gray;
+      transition: all 0.2s ease-in;
+    }
+  }
+}
+
+// Animated Menu Button
+.menu-btn {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.menu-btn__burger,
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  width: 24px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+}
+
+.menu-btn__burger::before {
+  transform: translatey(-8px);
+}
+
+.menu-btn__burger::after {
+  transform: translatey(8px);
+}
+
+/* Animation */
+.menu-btn.open .menu-btn__burger {
+  background-color: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg);
+}
+
+// End of Animated Menu Button
