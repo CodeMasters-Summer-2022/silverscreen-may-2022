@@ -15,6 +15,7 @@
 // $teal-dark: #0d433d;
 // $green: #159a4a;
 // $yellow: #ffeb00;
+// $red: #D22F27;
 
 body {
   background-color: $bg-black;
@@ -64,11 +65,12 @@ main {
   overflow: hidden;
   transition: width 0.5s ease-in;
   background-color: $bg-black;
+  z-index: 100;
+  border-bottom: 2px solid $teal;
 
   &.side-nav__open {
     width: 100%;
     overflow: auto;
-    z-index: 100;
   }
 
   h2 {
@@ -171,3 +173,10 @@ main {
 }
 
 // End of Animated Menu Button
+
+footer {
+  color: $gray;
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 1.5rem;
+}
