@@ -423,6 +423,18 @@ main {
   margin-top: 86px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .top-bar {
   padding: 1.5rem 1rem;
   display: flex;
@@ -685,13 +697,64 @@ footer {
   padding: 1rem 1.5rem 1.5rem;
 }
 .cards-wrapper .card .movie-details .movie-title {
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 .cards-wrapper .card .movie-details .movie-release-date {
   font-size: 0.875rem;
 }
 
+@media only screen and (min-width: 768px) {
+  .top-bar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .pages-wrapper {
+    justify-content: start;
+    padding: 3rem 2rem 2.25rem;
+  }
+  .pages-wrapper .pages-list__item a {
+    font-size: 1.25rem;
+  }
+
+  .hero-banner {
+    margin: 0 2rem 2.5rem;
+    padding: 5.5rem 2rem 1.5rem;
+  }
+  .hero-banner .hero-banner__title {
+    font-size: 2rem;
+  }
+  .hero-banner .hero-banner__tagline {
+    font-size: 1rem;
+  }
+  .hero-banner .hero-banner-link__wrapper {
+    justify-content: start;
+  }
+  .hero-banner .hero-banner-link__wrapper .hero-banner__link {
+    font-size: 1rem;
+    padding: 0.5rem 1.75rem;
+  }
+
+  .cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  .cards-wrapper .card {
+    flex: 1 0 calc(25% - 1rem);
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+  }
+  .cards-wrapper .card:nth-child(4n) {
+    margin-right: 0;
+  }
+  .cards-wrapper .card .movie-details {
+    flex: 1 1 30%;
+    padding: 1rem 1.25rem 1.5rem;
+  }
+}
 .pop-h1 {
   color: red;
 }
