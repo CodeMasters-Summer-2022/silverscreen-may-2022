@@ -420,7 +420,7 @@ body {
 }
 
 main {
-  margin-top: 86px;
+  margin-top: 84px;
 }
 
 .sr-only {
@@ -435,18 +435,21 @@ main {
   border-width: 0;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 2px solid #14b8a6;
+  background-color: #191a1f;
+}
+
 .top-bar {
   padding: 1.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #14b8a6;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background-color: #191a1f;
-  width: 100%;
 }
 
 .brand {
@@ -465,7 +468,7 @@ main {
   padding: 1rem 0;
   color: #9696a3;
   position: absolute;
-  top: 86px;
+  top: 84px;
   left: 0;
   width: 0;
   overflow: hidden;
@@ -753,6 +756,70 @@ footer {
   .cards-wrapper .card .movie-details {
     flex: 1 1 30%;
     padding: 1rem 1.25rem 1.5rem;
+  }
+}
+@media only screen and (min-width: 1281px) {
+  .top-bar {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  header {
+    border-bottom: none;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .top-bar {
+    padding: 0 2rem;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .brand {
+    padding: 1.5rem 0;
+    width: 17rem;
+    border-right: 1px solid #232323;
+  }
+
+  .side-nav {
+    width: 17rem;
+    left: 50%;
+    transform: translateX(-38rem);
+    min-height: calc(100vh - 84px);
+    border-bottom: none;
+    border-right: 1px solid #232323;
+  }
+  .side-nav h2 {
+    padding-left: 0;
+  }
+  .side-nav ul li {
+    padding-left: 0.25rem;
+    border-right: 6px solid #191a1f;
+    transition: all 0.2s ease-in;
+  }
+  .side-nav ul li:hover {
+    border-right-color: #14b8a6;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    max-width: 59rem;
+    background-color: #191a1f;
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-19.5rem);
+    z-index: 200;
+    margin-top: 0;
+  }
+
+  main {
+    margin-top: 0;
   }
 }
 .pop-h1 {

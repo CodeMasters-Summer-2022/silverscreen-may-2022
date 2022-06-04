@@ -24,7 +24,7 @@ body {
 }
 
 main {
-  margin-top: 86px;
+  margin-top: 84px;
 }
 
 .sr-only {
@@ -39,18 +39,21 @@ main {
   border-width: 0;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 2px solid $teal;
+  background-color: $bg-black;
+}
+
 .top-bar {
   padding: 1.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid $teal;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background-color: $bg-black;
-  width: 100%;
 }
 
 .brand {
@@ -71,7 +74,7 @@ main {
   padding: 1rem 0;
   color: $gray;
   position: absolute;
-  top: 86px;
+  top: 84px;
   left: 0;
   width: 0;
   overflow: hidden;
