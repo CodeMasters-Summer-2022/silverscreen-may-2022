@@ -821,6 +821,28 @@ footer {
   main {
     margin-top: 0;
   }
+
+  .pages-wrapper {
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-banner {
+    padding: 9rem 3rem 2.5rem;
+    margin-bottom: 3.25rem;
+  }
+  .hero-banner .hero-banner__title {
+    font-size: 3rem;
+  }
+  .hero-banner .hero-banner__tagline {
+    font-size: 1rem;
+  }
+  .hero-banner .hero-banner-link__wrapper {
+    justify-content: start;
+  }
+  .hero-banner .hero-banner-link__wrapper .hero-banner__link {
+    font-size: 1rem;
+    padding: 0.625rem 2rem;
+  }
 }
 .pop-h1 {
   color: red;
