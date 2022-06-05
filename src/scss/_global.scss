@@ -15,6 +15,7 @@
 // $teal-dark: #0d433d;
 // $green: #159a4a;
 // $yellow: #ffeb00;
+// $red: #D22F27;
 
 body {
   background-color: $bg-black;
@@ -23,7 +24,29 @@ body {
 }
 
 main {
-  margin-top: 86px;
+  margin-top: 84px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 2px solid $teal;
+  background-color: $bg-black;
 }
 
 .top-bar {
@@ -31,13 +54,6 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid $teal;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background-color: $bg-black;
-  width: 100%;
 }
 
 .brand {
@@ -58,17 +74,18 @@ main {
   padding: 1rem 0;
   color: $gray;
   position: absolute;
-  top: 86px;
+  top: 84px;
   left: 0;
   width: 0;
   overflow: hidden;
   transition: width 0.5s ease-in;
   background-color: $bg-black;
+  z-index: 100;
+  border-bottom: 2px solid $teal;
 
   &.side-nav__open {
     width: 100%;
     overflow: auto;
-    z-index: 100;
   }
 
   h2 {
@@ -171,3 +188,10 @@ main {
 }
 
 // End of Animated Menu Button
+
+footer {
+  color: $gray;
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 1.5rem;
+}
