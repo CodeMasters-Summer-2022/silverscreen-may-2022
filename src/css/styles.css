@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 /*!
  * Bootstrap Reboot v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -609,7 +610,7 @@ footer {
   margin: 0 1rem 3rem;
   padding: 2.25rem 1rem 1rem;
   border-radius: 0.75rem;
-  background: url("../static/images/placeholders/hero/hero_mobile.webp") #0d433d no-repeat 0% 40%/cover;
+  background: #0d433d url("../static/images/placeholders/hero/hero_mobile.webp") no-repeat 0% 40%/cover;
   position: relative;
 }
 .hero-banner .hero-banner__title {
@@ -844,10 +845,258 @@ footer {
     padding: 0.625rem 2rem;
   }
 }
-.pop-h1 {
-  color: red;
+.pop-pages-wrapper {
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+.pop-pages-wrapper .pop-pages-list {
+  display: flex;
+}
+.pop-pages-wrapper .pop-pages-list .pop-pages-list__item {
+  margin-right: 1.5rem;
+}
+.pop-pages-wrapper .pop-pages-list .pop-pages-list__item:last-child {
+  margin-right: 0;
+}
+.pop-pages-wrapper .pop-pages-list .pop-pages-list__item a {
+  color: #9696a3;
+  padding-bottom: 0.25rem;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+.pop-pages-wrapper .pop-pages-list .pop-pages-list__item a.active {
+  border-bottom: 2px solid #14b8a6;
+  color: #ffffff;
+}
+.pop-pages-wrapper .pop-pages-list .pop-pages-list__item a:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 
+.pop-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/src/static/images/placeholders/hero/hero_mobile.webp") #0d433d no-repeat 0% 40%/cover;
+  margin: 0 1rem 3rem;
+  padding: 2.25rem 1rem 1rem;
+  border-radius: 0.75rem;
+  position: relative;
+}
+.pop-hero .pop-hero__title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.pop-hero .pop-hero__tagline {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+.pop-hero .pop-hero__wrapper {
+  display: flex;
+  justify-content: center;
+}
+.pop-hero .pop-hero__wrapper .pop-hero__link {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 0.875rem;
+  background-color: #14b8a6;
+  padding: 0.375rem 1.5rem;
+  border-radius: 0.25rem;
+}
+.pop-hero .pop-hero__wrapper .pop-hero__link:hover {
+  text-decoration: none;
+}
+
+.pop-cardsWrapper {
+  margin: 0 2rem 1rem;
+}
+.pop-cardsWrapper .pop-card {
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.pop-cardsWrapper .pop-card .pop-movie-rating {
+  position: absolute;
+  top: -0.75rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  background-color: #232323;
+  border-width: 3px;
+  border-style: solid;
+  font-weight: 700;
+}
+.pop-cardsWrapper .pop-card .pop-movie-rating.pop-popular-high {
+  border-color: #159a4a;
+}
+.pop-cardsWrapper .pop-card .pop-movie-rating.pop-popular-medium {
+  border-color: #ffeb00;
+}
+.pop-cardsWrapper .pop-card .pop-movie-rating.pop-popular-low {
+  border-color: #d22f27;
+}
+.pop-cardsWrapper .pop-card .pop-poster {
+  border-radius: 0.75rem 0.75rem 0 0;
+  object-fit: contain;
+  height: 10rem;
+  overflow: hidden;
+}
+.pop-cardsWrapper .pop-card .pop-poster img {
+  border-radius: 0.75rem 0.75rem 0 0;
+  width: 100%;
+}
+.pop-cardsWrapper .pop-card .pop-movieInfo {
+  background-color: #af795f;
+  border-radius: 0 0 0.75rem 0.75rem;
+  padding: 1rem 1.5rem 1.5rem;
+}
+.pop-cardsWrapper .pop-card .pop-movieInfo__title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.pop-cardsWrapper .pop-card .pop-movieInfo__date {
+  font-size: 0.875rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .top-bar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .pop-pages-wrapper {
+    justify-content: start;
+    padding: 3rem 2rem 2.35rem;
+  }
+
+  .pop-pages-list__item a {
+    font-size: 1.25rem;
+  }
+
+  .pop-hero {
+    margin: 0 2rem 2.5rem;
+    padding: 5.5rem 2rem 1.5rem;
+  }
+  .pop-hero .pop-hero__title {
+    font-size: 2rem;
+  }
+  .pop-hero .pop-hero__tagline {
+    font-size: 1rem;
+  }
+  .pop-hero .pop-hero__wrapper {
+    justify-content: start;
+  }
+  .pop-hero .pop-hero__wrapper .pop-hero__link {
+    font-size: 1rem;
+    padding: 0.5rem 1.75rem;
+  }
+
+  .pop-cardsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0%;
+  }
+  .pop-cardsWrapper .pop-card {
+    flex: 1 0 calc(25% - 1rem);
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+  }
+  .pop-cardsWrapper .pop-card:nth-child(4n) {
+    margin-right: 0;
+  }
+  .pop-cardsWrapper .pop-card .pop-movieInfo {
+    flex: 1 1 30%;
+    padding: 1rem 1.25rem 1.5rem;
+  }
+}
+@media only screen and (min-width: 1281px) {
+  .top-bar {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  header {
+    border-bottom: none;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .brand {
+    padding: 1.5rem 0;
+    width: 17rem;
+    border-right: 1px solid #232323;
+  }
+
+  .side-nav {
+    width: 17rem;
+    left: 50%;
+    transform: translateX(-38rem);
+    min-height: calc(100vh - 84px);
+    border-bottom: none;
+    border-right: 1px solid #232323;
+  }
+  .side-nav h2 {
+    padding-left: 0;
+  }
+  .side-nav ul li {
+    padding-left: 0.25rem;
+    border-right: 6px solid #191a1f;
+    transition: all 0.2s ease-in;
+  }
+  .side-nav ul li:hover {
+    border-right-color: #14b8a6;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    max-width: 59rem;
+    background-color: #191a1f;
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-19.5rem);
+    z-index: 200;
+    margin-top: 0%;
+  }
+
+  main {
+    margin-top: 0;
+  }
+
+  .pop-pages-wrapper {
+    padding-bottom: 2.5rem;
+  }
+
+  .pop-hero {
+    padding: 9rem 3rem 2.5rem;
+    margin-bottom: 3.25rem;
+  }
+  .pop-hero .pop-hero__title {
+    font-size: 3rem;
+  }
+  .pop-hero .pop-hero__tagline {
+    font-size: 1rem;
+  }
+  .pop-hero .pop-hero__wrapper {
+    justify-content: start;
+  }
+  .pop-hero .pop-hero__wrapper .pop-hero__link {
+    font-size: 1rem;
+    padding: 0.625rem 2rem;
+  }
+}
 .npl-h1 {
   color: #14b8a6;
 }
