@@ -17,6 +17,8 @@
   "author": "Deepak Joy Jose",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.5.0",
+    "@parcel/transformer-webmanifest": "^2.5.0",
     "parcel": "^2.5.0",
     "sass": "^1.50.1"
   }
