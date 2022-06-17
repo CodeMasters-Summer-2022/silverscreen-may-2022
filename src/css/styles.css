@@ -436,7 +436,7 @@ main {
   border-width: 0;
 }
 
-header {
+.top-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -444,9 +444,6 @@ header {
   width: 100%;
   border-bottom: 2px solid #14b8a6;
   background-color: #191a1f;
-}
-
-.top-bar {
   padding: 1.5rem 1rem;
   display: flex;
   justify-content: space-between;
@@ -475,7 +472,7 @@ header {
   overflow: hidden;
   transition: width 0.5s ease-in;
   background-color: #191a1f;
-  z-index: 100;
+  z-index: 99;
   border-bottom: 2px solid #14b8a6;
 }
 .side-nav.side-nav__open {
@@ -577,6 +574,55 @@ footer {
   padding: 1.5rem;
 }
 
+@media only screen and (min-width: 768px) {
+  .top-bar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media only screen and (min-width: 1281px) {
+  .top-bar {
+    border-bottom: none;
+    width: 17rem;
+    left: 50%;
+    transform: translateX(-38rem);
+    padding: 0.25rem 0 0;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .brand {
+    padding: 1.5rem 0;
+    width: 17rem;
+    border-right: 1px solid #232323;
+  }
+
+  .side-nav {
+    width: 17rem;
+    left: 50%;
+    transform: translateX(-38rem);
+    min-height: calc(100vh - 84px);
+    border-bottom: none;
+    border-right: 1px solid #232323;
+  }
+  .side-nav h2 {
+    padding-left: 0;
+  }
+  .side-nav ul li {
+    padding-left: 0.25rem;
+    border-right: 6px solid #191a1f;
+    transition: all 0.2s ease-in;
+  }
+  .side-nav ul li:hover {
+    border-right-color: #14b8a6;
+  }
+}
 .pages-wrapper {
   margin: 0 auto;
   padding: 2rem 1rem;
@@ -709,11 +755,6 @@ footer {
 }
 
 @media only screen and (min-width: 768px) {
-  .top-bar {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .pages-wrapper {
     justify-content: start;
     padding: 3rem 2rem 2.25rem;
@@ -760,53 +801,6 @@ footer {
   }
 }
 @media only screen and (min-width: 1281px) {
-  .top-bar {
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-
-  header {
-    border-bottom: none;
-  }
-
-  body {
-    position: relative;
-  }
-
-  .top-bar {
-    padding: 0 2rem;
-  }
-
-  .menu-btn {
-    display: none;
-  }
-
-  .brand {
-    padding: 1.5rem 0;
-    width: 17rem;
-    border-right: 1px solid #232323;
-  }
-
-  .side-nav {
-    width: 17rem;
-    left: 50%;
-    transform: translateX(-38rem);
-    min-height: calc(100vh - 84px);
-    border-bottom: none;
-    border-right: 1px solid #232323;
-  }
-  .side-nav h2 {
-    padding-left: 0;
-  }
-  .side-nav ul li {
-    padding-left: 0.25rem;
-    border-right: 6px solid #191a1f;
-    transition: all 0.2s ease-in;
-  }
-  .side-nav ul li:hover {
-    border-right-color: #14b8a6;
-  }
-
   .content-wrapper {
     width: 100%;
     max-width: 59rem;
@@ -963,11 +957,6 @@ footer {
 }
 
 @media only screen and (min-width: 768px) {
-  .top-bar {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .pop-pages-wrapper {
     justify-content: start;
     padding: 3rem 2rem 2.35rem;
@@ -1015,16 +1004,6 @@ footer {
   }
 }
 @media only screen and (min-width: 1281px) {
-  .top-bar {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  header {
-    border-bottom: none;
-  }
-
   body {
     position: relative;
   }

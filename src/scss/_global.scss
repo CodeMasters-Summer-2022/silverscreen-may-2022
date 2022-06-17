@@ -39,7 +39,7 @@ main {
   border-width: 0;
 }
 
-header {
+.top-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -47,9 +47,6 @@ header {
   width: 100%;
   border-bottom: 2px solid $teal;
   background-color: $bg-black;
-}
-
-.top-bar {
   padding: 1.5rem 1rem;
   display: flex;
   justify-content: space-between;
@@ -80,7 +77,7 @@ header {
   overflow: hidden;
   transition: width 0.5s ease-in;
   background-color: $bg-black;
-  z-index: 100;
+  z-index: 99;
   border-bottom: 2px solid $teal;
 
   &.side-nav__open {
@@ -194,4 +191,62 @@ footer {
   text-align: center;
   font-size: 0.875rem;
   padding: 1.5rem;
+}
+
+// TABLET VIEW
+@media only screen and (min-width: 768px) {
+  .top-bar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+// Desktop View
+@media only screen and (min-width: 1281px) {
+  .top-bar {
+    border-bottom: none;
+    width: 17rem;
+    left: 50%;
+    transform: translateX(-38rem);
+    padding: 0.25rem 0 0;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .brand {
+    padding: 1.5rem 0;
+    width: 17rem;
+    border-right: 1px solid $dark-gray;
+  }
+
+  .side-nav {
+    width: 17rem;
+    left: 50%;
+    transform: translateX(-38rem);
+    min-height: calc(100vh - 84px);
+    border-bottom: none;
+    border-right: 1px solid $dark-gray;
+
+    h2 {
+      padding-left: 0;
+    }
+
+    ul {
+      li {
+        padding-left: 0.25rem;
+        border-right: 6px solid $bg-black;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          border-right-color: $teal;
+        }
+      }
+    }
+  }
 }
