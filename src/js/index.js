@@ -88,7 +88,7 @@ function renderMovieCards(moviesData) {
         <div class="hero-banner__overlay"></div>
       </div>
     `;
-    heroBannerContent = document
+    const heroBannerContent = document
       .createRange()
       .createContextualFragment(heroBannerTemplate)
       .querySelector("#heroContentWrapper");
