@@ -83,7 +83,7 @@ function renderMovieCards(moviesData) {
         <h2 class="hero-banner__title">${heroMovie.title}</h2>
         <p class="hero-banner__tagline">${heroMovie.tagline}</p>
         <div class="hero-banner-link__wrapper">
-          <a class="hero-banner__link" href="#">View More</a>
+          <a class="hero-banner__link" href="movie_details.html?movieId=${heroMovie.id}">View More</a>
         </div>
         <div class="hero-banner__overlay"></div>
       </div>
@@ -101,8 +101,11 @@ function renderMovieCards(moviesData) {
       // id, title, releaseDate & posterUrl are extracted using object destructuring
       const { id, title, releaseDate, popularity, posterUrl } = movieData;
 
+      // Determine the ratingClass based on the value of popularity
+      // Popularity < 4 ==> popular-low
+      // Popularity between 4 and 7 (excluding 7) ==> popular-medium
+      // Popularity >= 7 ==> popular-high
       let ratingClass = "movie-rating popular-low";
-
       if (popularity >= 7) ratingClass = "movie-rating popular-high";
       else if (popularity >= 4) ratingClass = "movie-rating popular-medium";
 
@@ -112,7 +115,7 @@ function renderMovieCards(moviesData) {
           <!-- Rating -->
           ${popularity}
         </span>
-        <a class="movie-details-link" href="#">
+        <a class="movie-details-link" href="movie_details.html?movieId=${id}">
           <div class="movie-poster__wrapper">
             <img
               class="movie-poster"

@@ -769,7 +769,7 @@ footer {
   border-radius: 0.75rem 0.75rem 0 0;
   width: 100%;
   opacity: 0.5;
-  transition: all 0.3s ease-in;
+  transition: transform 0.3s ease-in;
 }
 .cards-wrapper .card .movie-details {
   background-color: #af795f;
@@ -1120,6 +1120,10 @@ footer {
 }
 .npl-h1 {
   color: #14b8a6;
+}
+
+main h2 {
+  color: red;
 }
 
 /*# sourceMappingURL=styles.css.map */
