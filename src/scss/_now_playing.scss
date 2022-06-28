@@ -1,5 +1,304 @@
 @use "./colors" as *;
+@import url("https://fonts.googleapis.com/css2?family=nplpins:wght@400;500;600&display=swap");
 
-.npl-h1 {
-  color: $teal;
+// $black: #000000;
+// $white: #ffffff;
+// $white-50: rgba(255, 255, 255, 50%);
+
+// $bg-black: #191a1f;
+// $dark-gray: #232323;
+// $gray: #9696a3;
+// $light-gray: #696972;
+// $lighter-gray: #c4c4c4;
+// $brown: #af795f;
+// $teal: #14b8a6;
+// $teal-dark: #0d433d;
+// $green: #159a4a;
+// $yellow: #ffeb00;
+// $red: #d22f27;
+
+.npl-pages-wrapper {
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  
+
+  .npl-pages-list {
+    display: flex;
+
+    .npl-pages-list__item {
+      margin-right: 1.5rem;
+      
+      &:last-child {
+        margin-right: 0;
+      }
+      
+      a {
+        color: $gray;
+        padding-bottom: 0.25rem;
+        font-size: 18px;
+        transition: all 0.3s ease-in-out;
+
+        &:active {
+          border-bottom: 2px solid $teal;
+          color: $white;
+        }
+        
+        &:hover {
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.npl-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("/src/static/images/placeholders/hero/hero_mobile.webp") $teal-dark
+      no-repeat 0% 40% / cover;
+  margin: 0 1rem 3rem;
+  padding: 2.25rem 1rem 1rem;
+  border-radius: 0.75rem;
+  position: relative;
+
+  .npl-hero__title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .npl-hero__tagline {
+    color: $white-50;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .npl-hero__wrapper {
+    display: flex;
+    justify-content: center;
+
+    .npl-hero__link {
+      display: inline-block;
+      color: $white;
+      font-size: 0.875rem;
+      background-color: $teal;
+      padding: 0.375rem 1.5rem;
+      border-radius: 0.25rem;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Movie Cards Styles
+.npl-cardsWrapper {
+  margin: 0 2rem 1rem;
+
+  .npl-card {
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    .npl-movie-rating {
+      position: absolute;
+      top: -0.75rem;
+      right: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: grid;
+      place-items: center;
+      border-radius: 0.5rem;
+      background-color: $dark-gray;
+      border-width: 3px;
+      border-style: solid;
+      font-weight: 700;
+
+      &.npl-popular-high {
+        border-color: $green;
+      }
+
+      &.npl-popular-medium {
+        border-color: $yellow;
+      }
+
+      &.npl-popular-low {
+        border-color: $red;
+      }
+    }
+
+    .npl-poster {
+      border-radius: 0.75rem 0.75rem 0 0;
+      object-fit: contain;
+      height: 10rem;
+      overflow: hidden;
+      
+      img {
+        border-radius: 0.75rem 0.75rem 0 0;
+        width: 100%;
+      }
+    }
+    
+    .npl-movieInfo {
+      background-color: $brown;
+      border-radius: 0 0 0.75rem 0.75rem;
+      padding: 1rem 1.5rem 1.5rem;
+
+      &__title {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+    
+      &__date {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+// Tablet View
+@media only screen and (min-width: 768px) {
+  
+  .npl-pages-wrapper {
+    justify-content: start;
+    padding: 3rem 2rem 2.35rem;
+  }
+  // This command doesn't work?
+  
+  .npl-pages-list__item a {
+    font-size: 1.25rem;
+  }
+  
+  .npl-hero {
+    margin: 0 2rem 2.5rem;
+    padding: 5.5rem 2rem 1.5rem;
+    
+    .npl-hero__title {
+      font-size: 2rem;
+    }
+    
+    .npl-hero__tagline {
+      font-size: 1rem;
+    }
+    
+    .npl-hero__wrapper {
+      justify-content: start;
+      
+      .npl-hero__link {
+        font-size: 1rem;
+        padding: 0.5rem 1.75rem;
+      }
+    }
+  }
+
+  .npl-cardsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0%;
+
+    .npl-card {
+      flex: 1 0 calc(25% - 1rem);
+      display: flex;
+      flex-direction: column;
+      margin-right: 1rem;
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+      
+      .npl-movieInfo {
+        flex: 1 1 30%;
+        padding: 1rem 1.25rem 1.5rem;
+      }
+    }
+  }
+}
+
+// Desktop View
+@media only screen and (min-width: 1281px) {
+  
+  body {
+    position: relative;
+  }
+  
+  .menu-btn {
+    display: none;
+  }
+  
+  .brand {
+    padding: 1.5rem 0;
+    width: 17rem;
+    border-right: 1px solid $dark-gray;
+  }
+  
+  .side-nav {
+    width: 17rem;
+    left: 50%;
+    transform: translateX(-38rem);
+    min-height: calc(100vh - 84px);
+    border-bottom: none;
+    border-right: 1px solid $dark-gray;
+
+    h2 {
+      padding-left: 0;
+    }
+    
+    ul {
+      
+      li {
+        padding-left: 0.25rem;
+        border-right: 6px solid $bg-black;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          border-right-color: $teal;
+        }
+      }
+    }
+  }
+
+  .content-wrapper {
+    width: 100%;
+    max-width: calc(59rem);
+    background-color: $bg-black;
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(calc(-19.5rem));
+    z-index: 200;
+    margin-top: 0%;
+  }
+
+  main {
+    margin-top: 0;
+  }
+  
+  .npl-pages-wrapper {
+    padding-bottom: 2.5rem;
+  }
+  
+  .npl-hero {
+    padding: 9rem 3rem 2.5rem;
+    margin-bottom: 3.25rem;
+
+    .npl-hero__title {
+      font-size: 3rem;
+    }
+    
+    .npl-hero__tagline {
+      font-size: 1rem;
+    }
+    
+    .npl-hero__wrapper {
+      justify-content: start;
+      
+      .npl-hero__link {
+        font-size: 1rem;
+        padding: 0.625rem 2rem;
+      }
+    }
+  }
 }
