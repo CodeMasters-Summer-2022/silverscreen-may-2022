@@ -67,8 +67,6 @@ async function init() {
 // This function parses the movies data and then renders each individual
 // movie cards
 function renderMovieCards(moviesData) {
-  let fragment = new DocumentFragment();
-
   // If there is no movie data to display, display appropriate error
   if (!moviesData || moviesData.length === 0) {
     displayError("No movies to display!!!");
@@ -97,6 +95,8 @@ function renderMovieCards(moviesData) {
     heroBanner.append(heroBannerContent);
 
     // Add the movie data to the page
+    let fragment = new DocumentFragment();
+
     for (const movieData of moviesData) {
       // id, title, releaseDate & posterUrl are extracted using object destructuring
       const { id, title, releaseDate, popularity, posterUrl } = movieData;
