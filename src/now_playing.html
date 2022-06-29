@@ -93,7 +93,7 @@
     <link rel="stylesheet" href="css/styles.css" />
 
     <!-- Import JavaScript files -->
-    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/nowPlaying.js"></script>
   </head>
   <body>
     <header>
@@ -246,150 +246,149 @@
       </nav>
     </header>
     <div class="content-wrapper">
-    <main>
-      <!-- Main content goes here -->
-       <!-- Top Nav -->
-       <div class="npl-pages-wrapper">
-        <ul class="npl-pages-list">
-          <li class="npl-pages-list__item">
-            <a href="index.html">Upcoming</a>
-          </li>
-          <li class="npl-pages-list__item">
-            <a class="active" href="#">popular</a>
-          </li>
-          <li class="npl-pages-list__item">
-            <a href="now_playing.html">Now Playing</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Hero Banner -->
-      <section class="npl-hero">
-        <h2 class="npl-hero__title">Spider-Man: No Way Home</h2>
-        <p class="npl-hero__tagline">Lorem ipsum dolor sit amet</p>
-        <div class="npl-hero__wrapper">
-          <a class="npl-hero__link" href="#">View More</a>
+      <main>
+        <!-- Main content goes here -->
+        <!-- Top Nav -->
+        <div class="npl-pages-wrapper">
+          <ul class="npl-pages-list">
+            <li class="npl-pages-list__item">
+              <a href="index.html">Upcoming</a>
+            </li>
+            <li class="npl-pages-list__item">
+              <a class="active" href="#">popular</a>
+            </li>
+            <li class="npl-pages-list__item">
+              <a href="now_playing.html">Now Playing</a>
+            </li>
+          </ul>
         </div>
-        <!-- I didn't use overlay
+
+        <!-- Hero Banner -->
+        <section class="npl-hero">
+          <h2 class="npl-hero__title">Spider-Man: No Way Home</h2>
+          <p class="npl-hero__tagline">Lorem ipsum dolor sit amet</p>
+          <div class="npl-hero__wrapper">
+            <a class="npl-hero__link" href="#">View More</a>
+          </div>
+          <!-- I didn't use overlay
                   <div class="npl-hero-banner__overlay"></div> -->
-      </section>
+        </section>
 
-      <!-- Movie Cards -->
-      <section class="npl-cardsWrapper">
-        <div class="npl-card">
-          <span class="npl-movie-rating npl-popular-high">7.9</span>
-          <div class="npl-poster">
-            <img
-              src="/src/static/images/placeholders/cards/Batman_480.webp"
-              alt="Batman Poster"
-            />
+        <!-- Movie Cards -->
+        <section class="npl-cardsWrapper">
+          <div class="npl-card">
+            <span class="npl-movie-rating npl-popular-high">7.9</span>
+            <div class="npl-poster">
+              <img
+                src="/src/static/images/placeholders/cards/Batman_480.webp"
+                alt="Batman Poster"
+              />
+            </div>
+            <div class="npl-movieInfo">
+              <h3 class="npl-movieInfo__title">The Batman</h3>
+              <p class="npl-movieInfo__date">2022-03-06</p>
+            </div>
           </div>
-          <div class="npl-movieInfo">
-            <h3 class="npl-movieInfo__title">The Batman</h3>
-            <p class="npl-movieInfo__date">2022-03-06</p>
+          <div class="npl-card">
+            <span class="npl-movie-rating npl-popular-medium">6.0</span>
+            <div class="npl-poster">
+              <img
+                src="/src/static/images/placeholders/cards/FastAndFurious_480.webp"
+                alt="Fast and Furious Poster"
+              />
+            </div>
+            <div class="npl-movieInfo">
+              <h3 class="npl-movieInfo__title">Fast and Furious</h3>
+              <p class="npl-movieInfo__date">2022-03-06</p>
+            </div>
           </div>
-        </div>
-        <div class="npl-card">
-          <span class="npl-movie-rating npl-popular-medium">6.0</span>
-          <div class="npl-poster">
-            <img
-              src="/src/static/images/placeholders/cards/FastAndFurious_480.webp"
-              alt="Fast and Furious Poster"
-            />
+          <div class="npl-card">
+            <span class="npl-movie-rating npl-popular-low">5.4</span>
+            <div class="npl-poster">
+              <img
+                src="/src/static/images/placeholders/cards/BabyDriver_480.webp"
+                alt="Baby Driver Poster"
+              />
+            </div>
+            <div class="npl-movieInfo">
+              <h3 class="npl-movieInfo__title">Baby Driver</h3>
+              <p class="npl-movieInfo__date">2022-03-06</p>
+            </div>
           </div>
-          <div class="npl-movieInfo">
-            <h3 class="npl-movieInfo__title">Fast and Furious</h3>
-            <p class="npl-movieInfo__date">2022-03-06</p>
+          <div class="npl-card">
+            <span class="npl-movie-rating npl-popular-low">2.5</span>
+            <div class="npl-poster">
+              <img
+                src="/src/static/images/placeholders/cards/Erased_480.webp"
+                alt="Erased Poster"
+              />
+            </div>
+            <div class="npl-movieInfo">
+              <h3 class="npl-movieInfo__title">Erased</h3>
+              <p class="npl-movieInfo__date">2022-03-06</p>
+            </div>
           </div>
-        </div>
-        <div class="npl-card">
-          <span class="npl-movie-rating npl-popular-low">5.4</span>
-          <div class="npl-poster">
-            <img
-              src="/src/static/images/placeholders/cards/BabyDriver_480.webp"
-              alt="Baby Driver Poster"
-            />
+          <div class="npl-card">
+            <span class="npl-movie-rating npl-popular-high">7.9</span>
+            <div class="npl-poster">
+              <img
+                src="/src/static/images/placeholders/cards/Batman_480.webp"
+                alt="Batman Poster"
+              />
+            </div>
+            <div class="npl-movieInfo">
+              <h3 class="npl-movieInfo__title">The Batman</h3>
+              <p class="npl-movieInfo__date">2022-03-06</p>
+            </div>
           </div>
-          <div class="npl-movieInfo">
-            <h3 class="npl-movieInfo__title">Baby Driver</h3>
-            <p class="npl-movieInfo__date">2022-03-06</p>
+          <div class="npl-card">
+            <span class="npl-movie-rating npl-popular-medium">6.0</span>
+            <div class="npl-poster">
+              <img
+                src="/src/static/images/placeholders/cards/FastAndFurious_480.webp"
+                alt="Fast and Furious Poster"
+              />
+            </div>
+            <div class="npl-movieInfo">
+              <h3 class="npl-movieInfo__title">Fast and Furious</h3>
+              <p class="npl-movieInfo__date">2022-03-06</p>
+            </div>
           </div>
-        </div>
-        <div class="npl-card">
-          <span class="npl-movie-rating npl-popular-low">2.5</span>
-          <div class="npl-poster">
-            <img
-              src="/src/static/images/placeholders/cards/Erased_480.webp"
-              alt="Erased Poster"
-            />
+          <div class="npl-card">
+            <span class="npl-movie-rating npl-popular-low">5.4</span>
+            <div class="npl-poster">
+              <img
+                src="/src/static/images/placeholders/cards/BabyDriver_480.webp"
+                alt="Baby Driver Poster"
+              />
+            </div>
+            <div class="npl-movieInfo">
+              <h3 class="npl-movieInfo__title">Baby Driver</h3>
+              <p class="npl-movieInfo__date">2022-03-06</p>
+            </div>
           </div>
-          <div class="npl-movieInfo">
-            <h3 class="npl-movieInfo__title">Erased</h3>
-            <p class="npl-movieInfo__date">2022-03-06</p>
+          <div class="npl-card">
+            <span class="npl-movie-rating npl-popular-low">2.5</span>
+            <div class="npl-poster">
+              <img
+                src="/src/static/images/placeholders/cards/Erased_480.webp"
+                alt="Erased Poster"
+              />
+            </div>
+            <div class="npl-movieInfo">
+              <h3 class="npl-movieInfo__title">Erased</h3>
+              <p class="npl-movieInfo__date">2022-03-06</p>
+            </div>
           </div>
-        </div>
-        <div class="npl-card">
-          <span class="npl-movie-rating npl-popular-high">7.9</span>
-          <div class="npl-poster">
-            <img
-              src="/src/static/images/placeholders/cards/Batman_480.webp"
-              alt="Batman Poster"
-            />
-          </div>
-          <div class="npl-movieInfo">
-            <h3 class="npl-movieInfo__title">The Batman</h3>
-            <p class="npl-movieInfo__date">2022-03-06</p>
-          </div>
-        </div>
-        <div class="npl-card">
-          <span class="npl-movie-rating npl-popular-medium">6.0</span>
-          <div class="npl-poster">
-            <img
-              src="/src/static/images/placeholders/cards/FastAndFurious_480.webp"
-              alt="Fast and Furious Poster"
-            />
-          </div>
-          <div class="npl-movieInfo">
-            <h3 class="npl-movieInfo__title">Fast and Furious</h3>
-            <p class="npl-movieInfo__date">2022-03-06</p>
-          </div>
-        </div>
-        <div class="npl-card">
-          <span class="npl-movie-rating npl-popular-low">5.4</span>
-          <div class="npl-poster">
-            <img
-              src="/src/static/images/placeholders/cards/BabyDriver_480.webp"
-              alt="Baby Driver Poster"
-            />
-          </div>
-          <div class="npl-movieInfo">
-            <h3 class="npl-movieInfo__title">Baby Driver</h3>
-            <p class="npl-movieInfo__date">2022-03-06</p>
-          </div>
-        </div>
-        <div class="npl-card">
-          <span class="npl-movie-rating npl-popular-low">2.5</span>
-          <div class="npl-poster">
-            <img
-              src="/src/static/images/placeholders/cards/Erased_480.webp"
-              alt="Erased Poster"
-            />
-          </div>
-          <div class="npl-movieInfo">
-            <h3 class="npl-movieInfo__title">Erased</h3>
-            <p class="npl-movieInfo__date">2022-03-06</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-    </main>
+      <!-- Footer -->
 
-    <!-- Footer -->
-
-    <footer>
-      <h3 class="sr-only">Copyright Information</h3>
-      <p>&copy; 2022 CodeMasters | All Rights Reserved</p>
-    </footer>
-  </div>
+      <footer>
+        <h3 class="sr-only">Copyright Information</h3>
+        <p>&copy; 2022 CodeMasters | All Rights Reserved</p>
+      </footer>
+    </div>
   </body>
 </html>
