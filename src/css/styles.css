@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=nplpins:wght@400;500;600&display=swap");
 /*!
  * Bootstrap Reboot v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -1150,7 +1149,6 @@ footer {
 }
 
 .npl-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/src/static/images/placeholders/hero/hero_mobile.webp") #0d433d no-repeat 0% 40%/cover;
   margin: 0 1rem 3rem;
   padding: 2.25rem 1rem 1rem;
   border-radius: 0.75rem;
@@ -1186,8 +1184,8 @@ footer {
   margin: 0 2rem 1rem;
 }
 .npl-cardsWrapper .npl-card {
-  border-radius: 0.75rem;
   margin-bottom: 1.5rem;
+  border-radius: 0.75rem;
   position: relative;
 }
 .npl-cardsWrapper .npl-card .npl-movie-rating {
@@ -1234,6 +1232,21 @@ footer {
 }
 .npl-cardsWrapper .npl-card .npl-movieInfo__date {
   font-size: 0.875rem;
+}
+.npl-cardsWrapper .npl-card__date {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  background-color: #daa520;
+  color: #3c3c3c;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  transition: all 0.3s ease-in;
 }
 
 @media only screen and (min-width: 768px) {
