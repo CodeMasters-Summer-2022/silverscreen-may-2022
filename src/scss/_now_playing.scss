@@ -1,21 +1,4 @@
 @use "./colors" as *;
-@import url("https://fonts.googleapis.com/css2?family=nplpins:wght@400;500;600&display=swap");
-
-// $black: #000000;
-// $white: #ffffff;
-// $white-50: rgba(255, 255, 255, 50%);
-
-// $bg-black: #191a1f;
-// $dark-gray: #232323;
-// $gray: #9696a3;
-// $light-gray: #696972;
-// $lighter-gray: #c4c4c4;
-// $brown: #af795f;
-// $teal: #14b8a6;
-// $teal-dark: #0d433d;
-// $green: #159a4a;
-// $yellow: #ffeb00;
-// $red: #d22f27;
 
 .npl-pages-wrapper {
   margin: 0 auto;
@@ -23,7 +6,6 @@
   display: flex;
   justify-content: center;
   
-
   .npl-pages-list {
     display: flex;
 
@@ -55,9 +37,6 @@
 }
 
 .npl-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url("/src/static/images/placeholders/hero/hero_mobile.webp") $teal-dark
-      no-repeat 0% 40% / cover;
   margin: 0 1rem 3rem;
   padding: 2.25rem 1rem 1rem;
   border-radius: 0.75rem;
@@ -99,9 +78,10 @@
   margin: 0 2rem 1rem;
 
   .npl-card {
-    border-radius: 0.75rem;
     margin-bottom: 1.5rem;
+    border-radius: 0.75rem;
     position: relative;
+    // overflow: hidden;
 
     .npl-movie-rating {
       position: absolute;
@@ -155,6 +135,22 @@
       &__date {
         font-size: 0.875rem;
       }
+    }
+  
+    &__date {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: max-content;
+      background-color: #daa520;
+      color: #3c3c3c;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.7);
+      z-index: 10;
+      transition: all 0.3s ease-in;
     }
   }
 }
