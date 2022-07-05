@@ -22,10 +22,10 @@ async function init() {
     const API_KEY = process.env.SILVERSCREEN_TMDB_API_KEY;
     let allMovieDetails, movieDetails;
 
-    allMovieDetails = await fetch(getMovieData(URL, API_KEY));
-    console.log(`Fetched Movie Data:`, allMovieDetails);
-
     try {
+        allMovieDetails = await getMovieData(URL, API_KEY);
+        console.log(allMovieDetails);
+
         movieDetails = allMovieDetails.map((movie) => {
             return {
                 id: movie.id,
