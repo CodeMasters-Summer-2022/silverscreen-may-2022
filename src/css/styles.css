@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 /*!
  * Bootstrap Reboot v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -1139,7 +1138,7 @@ footer {
   font-size: 18px;
   transition: all 0.3s ease-in-out;
 }
-.npl-pages-wrapper .npl-pages-list .npl-pages-list__item a:active {
+.npl-pages-wrapper .npl-pages-list .npl-pages-list__item a.active {
   border-bottom: 2px solid #14b8a6;
   color: #ffffff;
 }
@@ -1188,6 +1187,10 @@ footer {
   border-radius: 0.75rem;
   position: relative;
 }
+.npl-cardsWrapper .npl-card:hover .npl-poster img {
+  transform: scale(1.1);
+  opacity: 1;
+}
 .npl-cardsWrapper .npl-card .npl-movie-rating {
   position: absolute;
   top: -0.75rem;
@@ -1201,6 +1204,7 @@ footer {
   border-width: 3px;
   border-style: solid;
   font-weight: 700;
+  z-index: 2;
 }
 .npl-cardsWrapper .npl-card .npl-movie-rating.npl-popular-high {
   border-color: #159a4a;
@@ -1220,6 +1224,7 @@ footer {
 .npl-cardsWrapper .npl-card .npl-poster img {
   border-radius: 0.75rem 0.75rem 0 0;
   width: 100%;
+  transition: transform 0.3s ease-in;
 }
 .npl-cardsWrapper .npl-card .npl-movieInfo {
   background-color: #af795f;

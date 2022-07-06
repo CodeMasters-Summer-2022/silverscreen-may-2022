@@ -22,7 +22,7 @@
         font-size: 18px;
         transition: all 0.3s ease-in-out;
 
-        &:active {
+        &.active {
           border-bottom: 2px solid $teal;
           color: $white;
         }
@@ -81,7 +81,15 @@
     margin-bottom: 1.5rem;
     border-radius: 0.75rem;
     position: relative;
-    // overflow: hidden;
+
+    &:hover {
+      .npl-poster {
+        img {
+          transform: scale(1.1);
+          opacity: 1;
+        }
+      }
+    }
 
     .npl-movie-rating {
       position: absolute;
@@ -96,6 +104,7 @@
       border-width: 3px;
       border-style: solid;
       font-weight: 700;
+      z-index: 2;
 
       &.npl-popular-high {
         border-color: $green;
@@ -119,6 +128,7 @@
       img {
         border-radius: 0.75rem 0.75rem 0 0;
         width: 100%;
+        transition: transform 0.3s ease-in;
       }
     }
     
