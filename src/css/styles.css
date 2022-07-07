@@ -768,7 +768,7 @@ footer {
   border-radius: 0.75rem 0.75rem 0 0;
   width: 100%;
   opacity: 0.5;
-  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
 }
 .cards-wrapper .card .movie-details {
   background-color: #af795f;
