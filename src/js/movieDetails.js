@@ -1,58 +1,64 @@
 // Details to be displayed from the fetch result from
 // MovieDb API GET Movie Details endpoint:
-// id, title, overview, poster_path, release_date, release_date, budget, revenue, runtime,
+// id, title, overview, poster_path, release_date, budget, revenue, runtime,
 // tagline, vote_average
-import getMovieData from "./movieData.js";
+import { getSingleMovieDetails } from "./movieData.js";
 
 init();
 
 async function init() {
-    const menuBtn = document.querySelector(".menu-btn");
-    const sideNav = document.querySelector(".side-nav");
-  
-    menuBtn.addEventListener("click", () => {
-      menuBtn.classList.toggle("open");
-      sideNav.classList.toggle("side-nav__open");
-    });
+  const menuBtn = document.querySelector(".menu-btn");
+  const sideNav = document.querySelector(".side-nav");
 
-    const param = new URLSearchParams(window.location.search);
-    movieID = param.get('movieId');
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("open");
+    sideNav.classList.toggle("side-nav__open");
+  });
 
-    const URL = `https://api.themoviedb.org/3/movie/${movieID}`;
-    const API_KEY = process.env.SILVERSCREEN_TMDB_API_KEY;
-    let allMovieDetails, movieDetails;
+  const param = new URLSearchParams(window.location.search);
+  const movieId = param.get("movieId");
+  const API_KEY = process.env.SILVERSCREEN_TMDB_API_KEY;
 
-    try {
-        allMovieDetails = await getMovieData(URL, API_KEY);
-        console.log(allMovieDetails);
+  try {
+    const movieDetails = await getSingleMovieDetails(movieId, API_KEY);
 
-        movieDetails = allMovieDetails.map((movie) => {
-            return {
-                id: movie.id,
-                title: movie.title,
-                tagline: movie.overview,
-                releaseDate: movie.release_date,
-                popularity: movie.vote_average,
-                posterUrl: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-            };
-        });
-    } catch(error) {
-        console.log(`Error occurred while fetching movie data: ${error.message}`);
-        // displayError("Unexpected error occurred while loading movie data");
-    }
-
-    console.log(movieDetails);
-
+    // Render the movie details
     movieDetailsHTML(movieDetails);
+  } catch (error) {
+    console.log(`Error occurred while fetching movie data: ${error.message}`);
+    // displayError("Unexpected error occurred while loading movie data");
+  }
 }
 
-function movieDetailsHTML(moviesData) {
-    let fragment = new DocumentFragment();
+function movieDetailsHTML(movieData) {
+  const {
+    id,
+    title,
+    overview,
+    budget,
+    revenue,
+    runtime,
+    tagline,
+    vote_average: popularity,
+    release_date: releaseDate,
+    poster_path: posterRelativeUrl
+  } = movieData;
 
-    for (const movieData of moviesData) {
-        const {id, title, releaseDate, posterUrl } = movieData;
+  const posterUrl = `https://image.tmdb.org/t/p/w500${posterRelativeUrl}`;
+  console.dir({
+    id,
+    title,
+    overview,
+    budget,
+    revenue,
+    runtime,
+    tagline,
+    popularity,
+    releaseDate,
+    posterUrl
+  });
 
-        const template = `
+  const template = `
       <div class="movie-card" data-movie-id="${id}">
         <h3 class="movie-title">${title}</h3>
         <div class="movie-poster-wrapper">
@@ -64,6 +70,7 @@ function movieDetailsHTML(moviesData) {
         </div>
       </div>`;
 
-      document.getElementById("movie-details-main").append(fragment);
-    }
+  document
+    .getElementById("movieDetailsMain")
+    .insertAdjacentHTML("afterbegin", template);
 }
