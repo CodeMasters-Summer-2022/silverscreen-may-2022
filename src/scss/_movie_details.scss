@@ -208,7 +208,7 @@
 
         .single-movie-poster-wrapper {
             grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(6, fit-content);
+            grid-template-rows: repeat(6, min-content);
             gap: 2rem;
 
             img {
