@@ -64,7 +64,7 @@ function movieDetailsHTML(movieData) {
   console.log(dateNum);
   const year = date.getFullYear();
   console.log(year);
-  formatRelease = month + " " + date.getDate() + ", " + date.getFullYear();
+  formatRelease = month + " " + string(date.getDate()) + ", " + string(date.getFullYear());
 
   let ratingClass = "movie-rating popular-low";
   if (popularity >= 7) ratingClass = "movie-rating popular-high";
