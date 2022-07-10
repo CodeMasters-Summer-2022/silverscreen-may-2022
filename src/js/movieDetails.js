@@ -26,7 +26,7 @@ async function init() {
     movieDetailsHTML(movieDetails);
   } catch (error) {
     console.log(`Error occurred while fetching movie data: ${error.message}`);
-    displayError("Unexpected error occurred while loading movie data");
+    displayError("Unexpected error occurred while loading movie data.");
   }
 }
 
@@ -117,4 +117,12 @@ function movieDetailsHTML(movieData) {
   document
     .getElementById("movieDetailsMain")
     .insertAdjacentHTML("beforeend", template);
+}
+
+function displayError(errorMessage) {
+  const movieError = document.getElementById("movieDetailsMain");
+  const feedbackPara = document.createElement("p");
+  feedbackPara.textContent = errorMessage;
+  feedbackPara.className = "error-text";
+  movieError.append(feedbackPara);
 }
