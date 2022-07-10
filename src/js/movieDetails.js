@@ -58,7 +58,7 @@ function movieDetailsHTML(movieData) {
     posterUrl
   });
 
-  var date = new Date(releaseDate);
+  const date = new Date(releaseDate);
   const month = date.toLocaleString('default', { month: 'long' });
   formatRelease = month + " " + date.getDate().toString() + ", " + date.getFullYear().toString();
 
