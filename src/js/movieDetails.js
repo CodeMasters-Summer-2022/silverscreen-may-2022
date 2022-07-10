@@ -60,7 +60,7 @@ function movieDetailsHTML(movieData) {
 
   var date = new Date(releaseDate);
   const month = date.toLocaleString('default', { month: 'long' });
-  dateString = month + " " + date.getDate() + ", " + date.getFullYear();
+  formatRelease = month + " " + date.getDate() + ", " + date.getFullYear();
 
   let ratingClass = "movie-rating popular-low";
   if (popularity >= 7) ratingClass = "movie-rating popular-high";
@@ -88,7 +88,7 @@ function movieDetailsHTML(movieData) {
             </div>
             <div class="single-movie-release-date">
               <h3>RELEASE</h3>
-              <p>${dateString}</p>
+              <p>${formatRelease}</p>
             </div>
             <div class="single-movie-budget">
               <h3>BUDGET</h3>
