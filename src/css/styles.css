@@ -1438,7 +1438,7 @@ footer {
   font-weight: 500;
 }
 #movieDetailsMain h3 {
-  color: rgb(150, 150, 163);
+  color: #9696a3;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
@@ -1453,7 +1453,7 @@ footer {
 }
 #movieDetailsMain .single-movie-poster-wrapper img {
   border-radius: 7px;
-  border: 0.1px solid rgb(150, 150, 163);
+  border: 0.1px solid #9696a3;
   grid-column: 1/3;
   grid-row: 1/3;
   height: auto;
