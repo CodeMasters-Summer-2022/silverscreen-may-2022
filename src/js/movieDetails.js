@@ -26,7 +26,7 @@ async function init() {
     movieDetailsHTML(movieDetails);
   } catch (error) {
     console.log(`Error occurred while fetching movie data: ${error.message}`);
-    // displayError("Unexpected error occurred while loading movie data");
+    displayError("Unexpected error occurred while loading movie data");
   }
 }
 
@@ -58,19 +58,63 @@ function movieDetailsHTML(movieData) {
     posterUrl
   });
 
+  var date = new Date(releaseDate);
+  const month = date.toLocaleString('default', { month: 'long' });
+  dateString = month + " " + date.getDate() + ", " + date.getFullYear();
+
+  let ratingClass = "movie-rating popular-low";
+  if (popularity >= 7) ratingClass = "movie-rating popular-high";
+  else if (popularity >= 4) ratingClass = "movie-rating popular-medium";
+
+  let totalRev = revenue;
+  formatRev = "$" + totalRev.toLocaleString();
+  if (revenue === 0) formatRev = "-";
+
+  let totalBudget = budget;
+  formatBudget = "$" + totalBudget.toLocaleString();
+  if (budget === 0) formatBudget = "-";
+
+  if (tagline === "") formatTagline = "-";
+  else formatTagline = "\"" + tagline + "\"";
+
   const template = `
-      <div class="movie-card" data-movie-id="${id}">
-        <h3 class="movie-title">${title}</h3>
-        <div class="movie-poster-wrapper">
-          <p class="movie-release-date">Released on: ${releaseDate}</p>
-          <img class="movie-poster" src="${posterUrl}" alt="Poster of ${title}">
-          <div class="movie-overlay">
-            <a href="./movie-details?movieId=${id}">View More</a>
-          </div>
+      <div class="single-movie" data-movie-id="${id}">
+        <h2 class="single-title">${title}</h2>
+        <div class="single-movie-poster-wrapper">
+          <img class="single-movie-poster" src="${posterUrl}" alt="Poster of ${title}">
+            <div class="single-movie-popularity">
+              <h3>POPULARITY</h3>
+              <p class="${ratingClass}">${popularity}</p>
+            </div>
+            <div class="single-movie-release-date">
+              <h3>RELEASE</h3>
+              <p>${dateString}</p>
+            </div>
+            <div class="single-movie-budget">
+              <h3>BUDGET</h3>
+              <p>${formatBudget}</p>
+            </div>
+            <div class="single-movie-revenue">
+              <h3>REVENUE</h3>
+              <p">${formatRev}</p>
+            </div>
+            <div class="single-movie-runtime">
+              <h3>RUNTIME</h3>
+              <p>${runtime} mins</p>
+            </div>
+            <div class="single-movie-tagline">
+              <h3>TAGLINE</h3>
+              <i>${formatTagline}</i>
+            </div>
+            <div class="single-movie-overview">
+              <h3>OVERVIEW</h3>
+              <p>${overview}</p>
+            </div>
         </div>
+
       </div>`;
 
   document
     .getElementById("movieDetailsMain")
-    .insertAdjacentHTML("afterbegin", template);
+    .insertAdjacentHTML("beforeend", template);
 }
