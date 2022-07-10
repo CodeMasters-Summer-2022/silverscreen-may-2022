@@ -25,7 +25,7 @@ async function init() {
     // Render the movie details
     movieDetailsHTML(movieDetails);
   } catch (error) {
-    console.log(`Error occurred while fetching movie data: ${error.message}`);
+    // console.log(`Error occurred while fetching movie data: ${error.message}`);
     displayError("Unexpected error occurred while loading movie data.");
   }
 }
