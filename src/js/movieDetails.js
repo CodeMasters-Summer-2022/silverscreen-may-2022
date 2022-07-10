@@ -67,13 +67,14 @@ function movieDetailsHTML(movieData) {
   else if (popularity >= 4) ratingClass = "movie-rating popular-medium";
 
   let totalRev = revenue;
-  formatRev = "$" + totalRev.toLocaleString();
+  const formatRev = "$" + totalRev.toLocaleString();
   if (revenue === 0) formatRev = "-";
 
   let totalBudget = budget;
-  formatBudget = "$" + totalBudget.toLocaleString();
+  const formatBudget = "$" + totalBudget.toLocaleString();
   if (budget === 0) formatBudget = "-";
 
+  let formatTagline = tagline;
   if (tagline === "") formatTagline = "-";
   else formatTagline = "\"" + tagline + "\"";
 
