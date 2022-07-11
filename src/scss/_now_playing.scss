@@ -5,17 +5,17 @@
   padding: 2rem 1rem;
   display: flex;
   justify-content: center;
-  
+
   .npl-pages-list {
     display: flex;
 
     .npl-pages-list__item {
       margin-right: 1.5rem;
-      
+
       &:last-child {
         margin-right: 0;
       }
-      
+
       a {
         color: $gray;
         padding-bottom: 0.25rem;
@@ -26,7 +26,7 @@
           border-bottom: 2px solid $teal;
           color: $white;
         }
-        
+
         &:hover {
           color: $white;
           text-decoration: none;
@@ -37,39 +37,75 @@
 }
 
 .npl-hero {
+  background-repeat: no-repeat;
+  background-position: 0% 40%;
+  background-size: cover;
+  background-color: $teal-dark;
   margin: 0 1rem 3rem;
   padding: 2.25rem 1rem 1rem;
   border-radius: 0.75rem;
   position: relative;
+
+  &:hover {
+    .npl-hero-banner__overlay {
+      opacity: 0.3;
+    }
+  }
 
   .npl-hero__title {
     font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
-  
+
   .npl-hero__tagline {
     color: $white-50;
     font-size: 0.875rem;
     margin-bottom: 1.5rem;
   }
 
+  .npl-hero__title,
+  .npl-hero__tagline {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
   .npl-hero__wrapper {
     display: flex;
     justify-content: center;
+  }
 
-    .npl-hero__link {
-      display: inline-block;
-      color: $white;
-      font-size: 0.875rem;
-      background-color: $teal;
-      padding: 0.375rem 1.5rem;
-      border-radius: 0.25rem;
+  .npl-hero__link {
+    display: inline-block;
+    color: $white;
+    font-size: 0.875rem;
+    background-color: $teal;
+    padding: 0.375rem 1.5rem;
+    border-radius: 0.25rem;
 
-      &:hover {
-        text-decoration: none;
-      }
+    &:hover {
+      text-decoration: none;
     }
+  }
+
+  .npl-hero__title,
+  .npl-hero__tagline,
+  .npl-hero__link {
+    position: relative;
+    z-index: 10;
+  }
+
+  .npl-hero-banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $black;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.75rem;
+    transition: opacity 0.3s ease-in;
   }
 }
 
@@ -124,14 +160,14 @@
       object-fit: contain;
       height: 10rem;
       overflow: hidden;
-      
+
       img {
         border-radius: 0.75rem 0.75rem 0 0;
         width: 100%;
         transition: transform 0.3s ease-in;
       }
     }
-    
+
     .npl-movieInfo {
       background-color: $brown;
       border-radius: 0 0 0.75rem 0.75rem;
@@ -141,12 +177,12 @@
         font-weight: 600;
         margin-bottom: 0.5rem;
       }
-    
+
       &__date {
         font-size: 0.875rem;
       }
     }
-  
+
     &__date {
       position: absolute;
       bottom: 1rem;
@@ -167,32 +203,31 @@
 
 // Tablet View
 @media only screen and (min-width: 768px) {
-  
   .npl-pages-wrapper {
     justify-content: start;
     padding: 3rem 2rem 2.35rem;
   }
   // This command doesn't work?
-  
+
   .npl-pages-list__item a {
     font-size: 1.25rem;
   }
-  
+
   .npl-hero {
     margin: 0 2rem 2.5rem;
     padding: 5.5rem 2rem 1.5rem;
-    
+
     .npl-hero__title {
       font-size: 2rem;
     }
-    
+
     .npl-hero__tagline {
       font-size: 1rem;
     }
-    
+
     .npl-hero__wrapper {
       justify-content: start;
-      
+
       .npl-hero__link {
         font-size: 1rem;
         padding: 0.5rem 1.75rem;
@@ -214,7 +249,7 @@
       &:nth-child(4n) {
         margin-right: 0;
       }
-      
+
       .npl-movieInfo {
         flex: 1 1 30%;
         padding: 1rem 1.25rem 1.5rem;
@@ -225,21 +260,25 @@
 
 // Desktop View
 @media only screen and (min-width: 1281px) {
-  
   body {
     position: relative;
   }
-  
+
   .menu-btn {
     display: none;
   }
-  
+
+  .npl-hero {
+    // border: 2px solid red;
+    width: 65vw;
+  }
+
   .brand {
     padding: 1.5rem 0;
     width: 17rem;
     border-right: 1px solid $dark-gray;
   }
-  
+
   .side-nav {
     width: 17rem;
     left: 50%;
@@ -251,9 +290,8 @@
     h2 {
       padding-left: 0;
     }
-    
+
     ul {
-      
       li {
         padding-left: 0.25rem;
         border-right: 6px solid $bg-black;
@@ -281,11 +319,11 @@
   main {
     margin-top: 0;
   }
-  
+
   .npl-pages-wrapper {
     padding-bottom: 2.5rem;
   }
-  
+
   .npl-hero {
     padding: 9rem 3rem 2.5rem;
     margin-bottom: 3.25rem;
@@ -293,14 +331,14 @@
     .npl-hero__title {
       font-size: 3rem;
     }
-    
+
     .npl-hero__tagline {
       font-size: 1rem;
     }
-    
+
     .npl-hero__wrapper {
       justify-content: start;
-      
+
       .npl-hero__link {
         font-size: 1rem;
         padding: 0.625rem 2rem;

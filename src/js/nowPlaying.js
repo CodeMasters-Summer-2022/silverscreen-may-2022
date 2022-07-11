@@ -17,7 +17,7 @@ async function init() {
   // Getting all movie data from the Api
   const URL = "https://api.themoviedb.org/3/movie/now_playing";
   const API_KEY = process.env.SILVERSCREEN_TMDB_API_KEY;
-  
+
   let allNowPlayingMoviesData, nowPlayingMoviesData;
 
   // Gets all movie data from the API
@@ -31,55 +31,56 @@ async function init() {
       tagline: movie.overview,
       releaseDate: movie.release_date,
       popularity: movie.vote_average,
-      posterUrl: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+      posterUrl: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
     };
   });
 
   // Setting a random Movie from the Api as the hero section
-  let randomMovie = Math.floor(Math.random() * 20)
-  for (let i = 0; i < nowPlayingMoviesData.length; i++){
-    if (randomMovie === i){
-      const posterTemplate = `
-        <h2 class="npl-hero__title">${nowPlayingMoviesData[i].title}</h2>
-        <p class="npl-hero__tagline">${nowPlayingMoviesData[i].tagline}</p>
-        <div class="npl-hero__wrapper">
-          <a class="npl-hero__link" href="#">View More</a>
-        </div>
-      `
+  const randomMovie = Math.floor(Math.random() * 20);
+  const nplHeroMovie = nowPlayingMoviesData[randomMovie];
 
-      let nplHero = document.querySelector(".npl-hero")
-      nplHero.insertAdjacentHTML("beforeend", posterTemplate);
-      
-      // Adding The background styles to the hero section
-      let link = nowPlayingMoviesData[i].posterUrl;
-      let linearGradient = "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75))";
-      
-      nplHero.style.background = `${linearGradient}, url(${link}), no-repeat #0d433d`;
-      nplHero.style.backgroundPosition = "0% 40%";
-      nplHero.style.backgroundSize = "cover";
+  const nplHeroBannerTemplate = `
+    <div class="npl-hero-content-wrapper" id = "nplHeroContentWrapper">
+      <h2 class="npl-hero__title">${nplHeroMovie.title}</h2>
+      <p class="npl-hero__tagline">${nplHeroMovie.tagline}</p>
+      <div class="npl-hero__wrapper">
+        <a class="npl-hero__link" href="movie_details.html?movieId=${nplHeroMovie.id}">View More</a>
+      </div>
+      <div class="npl-hero-banner__overlay"></div>
+    </div>
+  `;
 
-    }  
-  }
+  const nplHeroBanner = document.querySelector("#npl-heroBanner");
+
+  const heroBannerContent = document
+    .createRange()
+    .createContextualFragment(nplHeroBannerTemplate)
+    .querySelector("#nplHeroContentWrapper");
+
+  // const nplHeroBanner = document.querySelector("#npl-hero");
+  nplHeroBanner.style.backgroundImage = `url(${nplHeroMovie.posterUrl})`;
+  nplHeroBanner.append(heroBannerContent);
+  // nplHeroBanner.insertAdjacentHTML("beforeend", nplHeroMovieTemplate);
 
   // Adding the movie data to the page
   for (const movieData of nowPlayingMoviesData) {
     // id, title, releaseDate & posterUrl are extracted using object destructuring
 
-    const { id, title, releaseDate, popularity, posterUrl} = movieData;
-      
+    const { id, title, releaseDate, popularity, posterUrl } = movieData;
+
     // Determining the rating class based on the value of popularity
     // Popularity < 4 ==> popular-low
     // Popularity between 4 and 7 (excluding 7) ==> popular-medium
     // Popularity >= 7 ==> popular-high
-    console.log(popularity)
+
     let ratingClass = "npl-movie-rating npl-popular-low";
-    
+
     if (popularity >= 7) {
       ratingClass = "npl-movie-rating npl-popular-high";
     } else if (popularity > 4) {
       ratingClass = "npl-movie-rating npl-popular-medium";
     }
-      
+
     const template = `
     <div class="npl-card" data-movie-id="${id}">
         <span class="${ratingClass}">${popularity}</span>
@@ -95,11 +96,11 @@ async function init() {
           <p class="npl-movieInfo__date">${releaseDate}</p>
         </div>
       </div>
-    `
+    `;
 
     // Parses the 'template' as HTML and inserts the resulting nodes into the DOM tree.
     document
-    .querySelector(".npl-cardsWrapper")
-    .insertAdjacentHTML("beforeend", template);     
+      .querySelector(".npl-cardsWrapper")
+      .insertAdjacentHTML("beforeend", template);
   }
 }

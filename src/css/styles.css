@@ -1148,10 +1148,17 @@ footer {
 }
 
 .npl-hero {
+  background-repeat: no-repeat;
+  background-position: 0% 40%;
+  background-size: cover;
+  background-color: #0d433d;
   margin: 0 1rem 3rem;
   padding: 2.25rem 1rem 1rem;
   border-radius: 0.75rem;
   position: relative;
+}
+.npl-hero:hover .npl-hero-banner__overlay {
+  opacity: 0.3;
 }
 .npl-hero .npl-hero__title {
   font-size: 1.25rem;
@@ -1163,11 +1170,17 @@ footer {
   font-size: 0.875rem;
   margin-bottom: 1.5rem;
 }
+.npl-hero .npl-hero__title,
+.npl-hero .npl-hero__tagline {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 .npl-hero .npl-hero__wrapper {
   display: flex;
   justify-content: center;
 }
-.npl-hero .npl-hero__wrapper .npl-hero__link {
+.npl-hero .npl-hero__link {
   display: inline-block;
   color: #ffffff;
   font-size: 0.875rem;
@@ -1175,8 +1188,25 @@ footer {
   padding: 0.375rem 1.5rem;
   border-radius: 0.25rem;
 }
-.npl-hero .npl-hero__wrapper .npl-hero__link:hover {
+.npl-hero .npl-hero__link:hover {
   text-decoration: none;
+}
+.npl-hero .npl-hero__title,
+.npl-hero .npl-hero__tagline,
+.npl-hero .npl-hero__link {
+  position: relative;
+  z-index: 10;
+}
+.npl-hero .npl-hero-banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  transition: opacity 0.3s ease-in;
 }
 
 .npl-cardsWrapper {
@@ -1310,6 +1340,10 @@ footer {
     display: none;
   }
 
+  .npl-hero {
+    width: 65vw;
+  }
+
   .brand {
     padding: 1.5rem 0;
     width: 17rem;
@@ -1383,7 +1417,7 @@ footer {
   font-weight: 500;
 }
 #movieDetailsMain h3 {
-  color: #9696a3;
+  color: rgb(150, 150, 163);
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
@@ -1398,7 +1432,7 @@ footer {
 }
 #movieDetailsMain .single-movie-poster-wrapper img {
   border-radius: 7px;
-  border: 0.1px solid #9696a3;
+  border: 0.1px solid rgb(150, 150, 163);
   grid-column: 1/3;
   grid-row: 1/3;
   height: auto;
