@@ -26,7 +26,7 @@ async function init() {
     movieDetailsHTML(movieDetails);
   } catch (error) {
     console.log(`Error occurred while fetching movie data: ${error.message}`);
-    displayError("Unexpected error occurred while loading movie data");
+    displayError("Unexpected error occurred while loading movie data.");
   }
 }
 
@@ -58,22 +58,23 @@ function movieDetailsHTML(movieData) {
     posterUrl
   });
 
-  var date = new Date(releaseDate);
+  const date = new Date(releaseDate);
   const month = date.toLocaleString('default', { month: 'long' });
-  dateString = month + " " + date.getDate() + ", " + date.getFullYear();
+  const formatRelease = month + " " + date.getDate().toString() + ", " + date.getFullYear().toString();
 
   let ratingClass = "movie-rating popular-low";
   if (popularity >= 7) ratingClass = "movie-rating popular-high";
   else if (popularity >= 4) ratingClass = "movie-rating popular-medium";
 
   let totalRev = revenue;
-  formatRev = "$" + totalRev.toLocaleString();
+  let formatRev = "$" + totalRev.toLocaleString();
   if (revenue === 0) formatRev = "-";
 
   let totalBudget = budget;
-  formatBudget = "$" + totalBudget.toLocaleString();
+  let formatBudget = "$" + totalBudget.toLocaleString();
   if (budget === 0) formatBudget = "-";
 
+  let formatTagline = tagline;
   if (tagline === "") formatTagline = "-";
   else formatTagline = "\"" + tagline + "\"";
 
@@ -88,7 +89,7 @@ function movieDetailsHTML(movieData) {
             </div>
             <div class="single-movie-release-date">
               <h3>RELEASE</h3>
-              <p>${dateString}</p>
+              <p>${formatRelease}</p>
             </div>
             <div class="single-movie-budget">
               <h3>BUDGET</h3>
@@ -117,4 +118,12 @@ function movieDetailsHTML(movieData) {
   document
     .getElementById("movieDetailsMain")
     .insertAdjacentHTML("beforeend", template);
+}
+
+function displayError(errorMessage) {
+  const movieError = document.getElementById("movieDetailsMain");
+  const feedbackPara = document.createElement("p");
+  feedbackPara.textContent = errorMessage;
+  feedbackPara.className = "error-text";
+  movieError.append(feedbackPara);
 }

@@ -57,10 +57,8 @@ async function init() {
     .createContextualFragment(nplHeroBannerTemplate)
     .querySelector("#nplHeroContentWrapper");
 
-  // const nplHeroBanner = document.querySelector("#npl-hero");
   nplHeroBanner.style.backgroundImage = `url(${nplHeroMovie.posterUrl})`;
   nplHeroBanner.append(heroBannerContent);
-  // nplHeroBanner.insertAdjacentHTML("beforeend", nplHeroMovieTemplate);
 
   // Adding the movie data to the page
   for (const movieData of nowPlayingMoviesData) {
